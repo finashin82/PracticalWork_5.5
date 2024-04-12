@@ -39,11 +39,12 @@ namespace PracticalWork_5._5
         /// <returns></returns>
         static string ReverseWord(string[] word)
         {
-            string reverseText = "";
-            for (int i = word.Length-1; i >= 0; i--)
-            {
-                reverseText += word[i] + " ";
-            }
+            // Записываем массив в обратном порядке
+            Array.Reverse(word);
+
+            // Преобразуем массив в строку (пробел между словами)
+            string reverseText = string.Join(" ", word);
+            
             return reverseText;
         }
 
@@ -54,6 +55,7 @@ namespace PracticalWork_5._5
         /// <returns></returns>
         static void ReverseWordFull(string text2) 
         {
+            // Разделение текста на слова по пробелу
             string[] splitText = text2.Split(' ');
 
             Console.WriteLine(ReverseWord(splitText));
